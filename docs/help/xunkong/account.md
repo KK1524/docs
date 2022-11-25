@@ -1,16 +1,16 @@
-# 添加米游社账号
-
-::: tip 提示
-寻空的很多功能需要使用米游社的账号，您的账号数据仅会存储在本地。
-:::
-
-![add-account](./img/img-add-account.webp)
-
-点击添加账号按键，或点击红框内的按键后，选择添加账号的方式。
-
-## 通过网页登录添加账号
-
-根据提示进行操作。
+javascript: (() => {
+    if (location.host.includes('bbs.mihoyo.com')) {
+        var cookie = document.cookie;
+        if (cookie.includes('cookie_token') && cookie.includes('account_id')) {
+            navigator.clipboard.writeText(cookie);
+            alert('Cookie 已复制到剪贴板');
+        } else {
+            alert('没有找到 cookie_token 和 account_id，请重新登录');
+        }
+    } else {
+        alert('当前网页不为米游社页面');
+    }
+})();
 
 ## 通过 Cookie 添加账号
 
